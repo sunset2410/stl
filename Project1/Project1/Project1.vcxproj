@@ -111,6 +111,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bitset.cpp" />
+    <ClCompile Include="dequeue.cpp" />
     <ClCompile Include="list.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="poolNode.cpp" />
