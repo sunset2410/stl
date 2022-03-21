@@ -1,5 +1,6 @@
 ﻿//// map<kiểu dữ liệu của key, kiểu dữ liệu của value> someMap;
 //// key cua map dc sap xep theo thu tu khi compare key  voi nhau
+//https://viblo.asia/p/set-va-map-trong-c-djeZ1jPJlWz
 //
 //#include<iostream>
 //#include<map>
@@ -58,6 +59,7 @@
 //	mymap[5] = "c";
 //	mymap[9] = "e";
 //	map<int, char*>::iterator var = mymap.find(5);
+//	var
 //	// var -> (5,"c")
 //	// xóa cặp đối tượng với "key" là 5
 //	mymap.erase(5);	

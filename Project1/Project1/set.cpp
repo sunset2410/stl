@@ -59,6 +59,14 @@
 //	mset.insert(16);
 //	mset.insert(1);
 //
+//	auto it = mset.begin();
+//
+//	advance(it,3); // tăng con trỏ 1 khoảng  offset
+//
+//	advance(it, -2);
+//
+//	mset.erase(it);
+//
 //	//mset.erase(9);
 //
 //	mset.count(9);
