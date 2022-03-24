@@ -117,6 +117,7 @@
     <ClCompile Include="map.cpp" />
     <ClCompile Include="map2.cpp" />
     <ClCompile Include="multimap.cpp" />
+    <ClCompile Include="multiset.cpp" />
     <ClCompile Include="poolNode.cpp" />
     <ClCompile Include="priority_queue.cpp" />
     <ClCompile Include="priority_queue_my.cpp" />

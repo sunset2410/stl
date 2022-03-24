@@ -2,36 +2,36 @@
 //#include<set>
 ////https://vncoder.vn/bai-hoc/set-khai-niem-270
 //// set la tap hop khong turng lap, cac phan tu nay la  key , duoc bo tri theo cau truc bst
-////Các hàm của set :
+////các hàm của set :
 ////size : trả về kích thước hiện tại của set.
 ////empty : true nếu set rỗng, và ngược lại.
-////insert : Chèn phần tử vào set. 
+////insert : chèn phần tử vào set. 
 ////erase : xóa phần tử, có 2 kiểu xóa: xóa theo iterator, hoặc là xóa theo khóa
 ////clear : xóa tất cả set. 
 ////swap : đổi 2 set cho nhau.
-////Truy cập phần tử :
-////find : trả về itarator trỏ đến phần tử cần tìm kiếm. Nếu không tìm thấy itarator trỏ về “end” của set. 
+////truy cập phần tử :
+////find : trả về itarator trỏ đến phần tử cần tìm kiếm. nếu không tìm thấy itarator trỏ về “end” của set. 
 ////lower_bound : trả về iterator đến vị trí phần tử bé nhất mà không bé hơn (lớn hơn hoặc bằng) 
 ////			  khóa (dĩ nhiên là theo phép so sánh), nếu không tìm thấy trả về vị trí “end” của set. 
 ////upper_bound: trả về iterator đến vị trí phần tử bé nhất mà lớn hơn khóa, nếu không tìm thấy trả về 
 ////			 vị trí “end” của set.
-////count : trả về số lần xuất hiện của khóa trong container. Nhưng trong set, các phần tử chỉ xuất 
+////count : trả về số lần xuất hiện của khóa trong container. nhưng trong set, các phần tử chỉ xuất 
 ////		hiện một lần, nên hàm này có ý nghĩa là sẽ return 1 nếu khóa có trong container, và 0 nếu không có.
 //
 //
 //using namespace std;
-//#define MAX_NODE 300000
+//#define max_node 300000
 //
-//struct Node{
+//struct node{
 //	int id;
 //	int xstart;
 //	int xend;
 //	int y;
-//	bool isDelete;
+//	bool isdelete;
 //};
 //
-//Node poolNode[MAX_NODE];
-//int countNOde;
+//node poolnode[max_node];
+//int countnode;
 //
 //
 //struct cmp{
@@ -43,7 +43,7 @@
 //
 //struct cmp2{
 //	bool operator()(int a, int  b){
-//		return (poolNode[a].y < poolNode[b].y);
+//		return (poolnode[a].y < poolnode[b].y);
 //	}
 //};
 //
@@ -71,6 +71,12 @@
 //
 //	mset.count(9);
 //
+//
+//	for(int x: mset)
+//	{
+//		cout<< " "<< x;
+//
+//	}
 //
 //
 //	return 0;

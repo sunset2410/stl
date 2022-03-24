@@ -51,5 +51,8 @@
     <ClCompile Include="priority_queue_my.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="multiset.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
