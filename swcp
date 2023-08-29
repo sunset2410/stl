@@ -1,0 +1,81 @@
+b5:
+#include <bits/stdc++.h>
+using namespace std;
+
+int N;//Number of mushrooms
+int P[150000 + 10];//Mushroom value
+int dp[150000 + 10][2];
+
+void InputData(){
+	cin >> N;
+	for (int i = 0; i < N; i++){
+		cin >> P[i];
+	}
+}
+
+//0 -
+//1 +
+int find(int index, int pre) {
+	if (index >= N) return 0;
+	
+	if (dp[index][pre] != -1) return dp[index][pre];
+	
+	if (pre == 0) {
+		int take = P[index] + find(index + 1, 1);
+		int notake = find(index + 1, 0);
+		return dp[index][pre] = max(take, notake);
+	} else {
+		int take = - P[index] + find(index + 1, 0);
+		int notake = find(index + 1, 1);
+		return dp[index][pre] = max(take, notake);
+	}
+}
+
+int main(){
+	int ans = -1;
+
+	InputData();			//	Input function
+
+	//	Write the code
+	memset(dp, -1, sizeof(dp));
+	ans = find(0, 0);
+	
+	
+	cout << ans << endl;	//	Output answer
+	return 0;
+}
+
+
+b5:
+#include <bits/stdc++.h>
+using namespace std;
+
+int N;//Number of mushrooms
+int P[150000 + 10];//Mushroom value
+int dpc[150000 + 5];
+int dpt[150000 + 5];
+
+void InputData(){
+	cin >> N;
+	for (int i = 0; i < N; i++){
+		cin >> P[i];
+	}
+}
+
+int main(){
+	int ans = -1;
+
+	InputData();			//	Input function
+
+	//	Write the code
+	dpc[0] =  P[0];
+	dpt[0] = 0;
+	for (int i = 0; i< N; i++) {
+		dpc[i] = max (dpt[i-1] + P[i], dpc[i-1]);
+		dpt[i] = max (dpc[i-1] - P[i], dpt[i-1]);
+	}
+	
+	ans = max(dpc[N-1],dpt[N-1]);
+	cout << ans << endl;	//	Output answer
+	return 0;
+}
