@@ -164,3 +164,79 @@ int main(){
 	cout << ans << endl;	//	Output answer
 	return 0;
 }
+
+
+
+special_integer_pair:
+#include<bits/stdc++.h>
+using namespace std;
+int n, k;
+int const MAX_N = 50005;
+int a[MAX_N];
+int b[MAX_N];
+int c[MAX_N];
+
+//ci - D =< cj <= ci + D;
+// bool check(int mid) {
+//     int cnt = 0;
+//     for (int i = 0; i < n; i++) {
+//         int p1 = lower_bound(c, c+n, c[i] - mid) - c;
+//         int p2 = upper_bound(c, c+n, c[i] + mid) - c -1;
+//         if (p2 > p1) cnt += p2-p1;
+//     }
+
+//     return false;
+// }
+
+bool check(int mid) {
+    int cnt = 0;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (abs(c[i] - c[j]) <= mid) cnt ++;
+            if (cnt >= k) return true;
+        }
+    }
+    return false;
+}
+
+
+int main() {
+    //freopen("input.txt", "r", stdin);
+    int T;
+    cin >> T;
+    //T = 1;
+    while (T > 0) {
+        T--;
+        cin >> n >> k;
+
+        for (int i = 0; i< n; i++) {
+            cin >> a[i];
+        }
+
+        for (int i = 0; i< n; i++) {
+            cin >> b[i];
+            c[i] = a[i] - b[i];
+        }
+
+        sort(c, c + n);
+        //for (int i = 0; i< n; i++) cout << c[i] << " ";
+
+        int D = -1;
+        int l = 0;
+        int r = 1e7;
+        int mid;
+        while(l <= r) {
+            mid = (l + r)/2;
+            if (check(mid)) {
+                D = mid;
+                r = mid -1;
+            } else {
+                l = mid + 1;
+            }
+        }
+        cout << D << endl;
+    }
+    return 0;
+}
+
+
