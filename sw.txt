@@ -369,6 +369,7 @@ int main(){
 	for (int i = end; i >= 0; i --) {
 		if (M <= 0) break;
 		int temp = M / B[i];
+		if (temp > sol[i]) temp = sol[i];
 		M -= temp*B[i];
 		cnt -= temp;
 		sol[i] -= temp;
