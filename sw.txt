@@ -317,3 +317,65 @@ int main() {
     }
     return 0;
 }
+
+
+// needy helping
+
+#include <iostream>
+using namespace std;
+
+int N;//The number of goods to send 
+int B[10] {1, 5, 10, 50, 100, 500, 1000, 3000, 6000, 12000};
+int C[10];//The number of BOXes(in order of 1, 5, 10, 50, 100, 500, 1000, 3000, 6000, 12000)
+int sol[10];//The number of boxes to send
+
+
+void InputData(){
+	int i;
+	cin >> N;
+	for(i = 0; i < 10; i++){
+		cin >> C[i];
+	}
+}
+
+void OutputData(int ans){
+	int i;
+	cout << ans << endl;
+	for(i = 0; i < 10; i++){
+		cout << sol[i] << " ";
+	}
+	cout << endl;
+}
+
+int main(){
+	int ans = 0;
+	InputData();//	Input function
+	//	---  Create the code -----//
+	int M = 0;
+	int cnt = 0;
+	int end = 0;
+	for (int i = 0; i< 10; i ++) {
+		if (M >= N) {
+			break;
+		} 
+		M += C[i]*B[i];
+		cnt += C[i];
+		sol[i] = C[i];
+		end = i;
+	}
+	M = M - N;
+	//cout << M << endl;
+	
+	for (int i = end; i >= 0; i --) {
+		if (M <= 0) break;
+		int temp = M / B[i];
+		M -= temp*B[i];
+		cnt -= temp;
+		sol[i] -= temp;
+	}
+	
+	ans = cnt;
+	OutputData(ans);//	Output function
+	return 0;
+}
+
