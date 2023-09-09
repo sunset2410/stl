@@ -1,3 +1,4 @@
+// https://www.hackerrank.com/contests/swpct-practice/challenges/road-to-company/submissions/code/1366735697
 #include<bits/stdc++.h>
 using namespace std;
 int N, X;
