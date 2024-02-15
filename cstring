@@ -1,1 +1,15 @@
+https://stackoverflow.com/questions/2287731/copy-const-char
 
+#include <iostream>
+
+int main()
+{
+    std::cout<<"Hello World \n";
+    const char* name = "tran trung kien";
+    const char* name2 = nullptr;
+    // need check nullptr before convert to std:string
+    std::string std_string = std::string(name);
+    printf("%s", name2);
+
+    return 0;
+}
